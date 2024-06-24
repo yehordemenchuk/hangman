@@ -2,10 +2,18 @@
 #include <cstdlib>
 #include <ctime>
 #include <string>
+#include <QMessageBox>
 #include "words.h"
+#include "game.h"
 
-void upload_words(string dictionary_words[]) {
+void upload_words(string dictionary_words[], Game* game) {
     ifstream dictionary_file(words::dictionary_file_name);
+
+    if (!dictionary_file) {
+        QMessageBox::critical(game, "Error", "Error of loading. Game files were corrupted or loss.");
+
+        exit(EXIT_FAILURE);
+    }
 
     for (int i = 0; i != words::words_count; ++i)
         getline(dictionary_file, dictionary_words[i]);

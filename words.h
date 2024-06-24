@@ -3,6 +3,7 @@
 
 #include <string>
 #include <QCoreApplication>
+#include "game.h"
 
 using namespace std;
 
@@ -18,7 +19,7 @@ namespace words {
     const char default_insert_char = '_';
 }
 
-void upload_words(string dictionary_words[]);
+void upload_words(string dictionary_words[], Game* game);
 
 void random_generator_init();
 
