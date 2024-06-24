@@ -1,4 +1,5 @@
 #include <QApplication>
+#include <QDialog>
 #include <Qstring>
 #include "game.h"
 #include "dialog.h"
@@ -6,7 +7,7 @@
 #include "words.h"
 
 Game::Game(QWidget *parent)
-    : QMainWindow(parent)
+    : QDialog(parent)
     , ui(new Ui::Game)
 {
     ui->setupUi(this);
@@ -20,7 +21,7 @@ Game::~Game()
 void Game::init() {
     string dictionary_words[words::words_count];
 
-    upload_words(dictionary_words);
+    upload_words(dictionary_words, this);
 
     m_state_of_game = game::PLAYING;
 
@@ -91,15 +92,14 @@ game::game_state Game::get_state_of_game() {
     return m_state_of_game;
 }
 
-void hangman_game(int argc, char* argv[]) {
-    QApplication application(argc, argv);
+void hangman_game() {
     Game hangman;
 
     hangman.init();
 
     hangman.render();
 
-    application.exec();
+    hangman.exec();
 }
 
 void Game::on_enterButton_clicked()

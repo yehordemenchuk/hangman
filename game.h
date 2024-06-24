@@ -1,7 +1,8 @@
 #ifndef GAME_H
 #define GAME_H
 
-#include <QMainWindow>
+#include <QDialog>
+#include <QApplication>
 #include <QString>
 #include <string>
 
@@ -31,7 +32,7 @@ namespace game {
 }
 QT_END_NAMESPACE
 
-class Game : public QMainWindow
+class Game : public QDialog
 {
     Q_OBJECT
 
@@ -59,6 +60,6 @@ private:
 
 void second_window_init(Game* game_ptr);
 
-void hangman_game(int argc, char* argv[]);
+void hangman_game();
 
 #endif // GAME_H
