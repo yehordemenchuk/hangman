@@ -1,7 +1,8 @@
 # Hangman
 ---
 ## Overview
-*Hangman is a classic word-guessing game where one player thinks of a word, and the other tries to guess it by suggesting letters within a certain number of guesses. The game is played between two players: one who sets the word and one who tries to guess it. This version of Hangman can be played solo against the computer.*
+
+Hangman is a classic word-guessing game where one player thinks of a word, and the other tries to guess it by suggesting letters within a certain number of guesses. The game is played between two players: one who sets the word and one who tries to guess it. This version of Hangman can be played solo against the computer.
 ---
 ## How to Play
 1. Start the Game: The computer randomly selects a word from a predefined list.
