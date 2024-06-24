@@ -1,7 +1,5 @@
-#include <iostream>
 #include <fstream>
 #include <cstdlib>
-#include <cstddef>
 #include <ctime>
 #include <string>
 #include "words.h"
@@ -23,13 +21,13 @@ string generate_secret_word(const string dictionary_words[]) {
     return dictionary_words[rand() % words::words_count + words::min_word_number];
 }
 
-string generate_output_word(const string secret_word, const string user_input_word) {
+string generate_output_word(const string secret_word, const string user_input_word, const string previous_output_word) {
     int secret_word_len { static_cast<int>(secret_word.length()) };
-    string output_word;
+    string output_word(secret_word_len, words::default_insert_char);
     
-    output_word.assign(secret_word_len, words::default_insert_char);
+    if (!previous_output_word.empty()) {
+        output_word = previous_output_word;
 
-    if (secret_word != user_input_word) {
         for (int i = 0, user_input_len = user_input_word.length(); i != user_input_len; ++i) {
             for (int j = 0; j != secret_word_len; ++j) {
                 if (user_input_word[i] == secret_word[j])

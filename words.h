@@ -2,6 +2,7 @@
 #define WORDS_H
 
 #include <string>
+#include <QCoreApplication>
 
 using namespace std;
 
@@ -23,6 +24,6 @@ void random_generator_init();
 
 string generate_secret_word(const string dictionary_words[]);
 
-string generate_output_word(const string secret_word, const string user_input_word);
+string generate_output_word(const string secret_word, const string user_input_word, const string previous_output_word);
 
 #endif
