@@ -29,6 +29,6 @@ Hangman is a classic word-guessing game where one player thinks of a word, and t
 ---
 ## Installation
 1. Download this repository from github
-2. Search to file Hangman (it`s link to zodiac.exe)
-3. Run the application by clicking on the Hangman file
+2. Search to file Hangman (it`s link to Hangman.exe)
+3. Run the game by clicking on the Hangman file
 4. Play game
