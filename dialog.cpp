@@ -15,8 +15,10 @@ Dialog::~Dialog()
     delete ui;
 }
 
-void Dialog::show_game_results() {
-    switch(m_game->get_state_of_game()) {
+void Dialog::show_game_results()
+{
+    switch(m_game->get_state_of_game())
+    {
         case game::GAME_WON:
             ui->game_result->setText("You won the game!!!");
 
@@ -45,4 +47,3 @@ void Dialog::on_exit_button_clicked()
 
     close();
 }
-

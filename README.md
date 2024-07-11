@@ -28,13 +28,7 @@ Hangman is a classic word-guessing game where one player thinks of a word, and t
 7. You continue guessing letters until you either guess the word or use all 5 attempts.
 ---
 ## Installation
-1. Clone the repository:
-```sh
-   git clone https://github.com/yehordemenchuk/hangman
-```
-2. Navigate to the project directory:
-```sh
-    cd hangman
-```
-3. Run the game by clicking on the Hangman.exe file.
-4. Enjoy game :)
+1. Download this repository from github
+2. Search to file Hangman (it`s link to zodiac.exe)
+3. Run the application by clicking on the Hangman file
+4. Play game
