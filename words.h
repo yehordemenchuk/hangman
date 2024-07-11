@@ -7,7 +7,8 @@
 
 using namespace std;
 
-namespace words {
+namespace words 
+{
     const string dictionary_file_name = "dictionary.txt";
 
     const int words_count = 200;
@@ -18,6 +19,8 @@ namespace words {
 
     const char default_insert_char = '_';
 }
+
+string str_to_lower(string str);
 
 void upload_words(string dictionary_words[], Game* game);
 
