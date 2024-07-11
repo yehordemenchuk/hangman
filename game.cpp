@@ -18,7 +18,8 @@ Game::~Game()
     delete ui;
 }
 
-void Game::init() {
+void Game::init() 
+{
     string dictionary_words[words::words_count];
 
     upload_words(dictionary_words, this);
@@ -34,7 +35,8 @@ void Game::init() {
     m_attempts_count = game::attempts_count;
 }
 
-void dialog_window_init(Game* game_ptr) {
+void dialog_window_init(Game* game_ptr) 
+{
     Dialog dialog_window(nullptr, game_ptr);
 
     dialog_window.setModal(game::modal);
@@ -46,8 +48,10 @@ void dialog_window_init(Game* game_ptr) {
     dialog_window.exec();
 }
 
-void Game::render() {
-    switch(m_state_of_game) {
+void Game::render() 
+{
+    switch(m_state_of_game) 
+    {
         case game::PLAYING:
             ui->current_attempts_count->setText(QString::number(m_attempts_count));
 
@@ -65,8 +69,9 @@ void Game::render() {
     }
 }
 
-void Game::update() {
-    m_user_input = ui->userGuess->text().toStdString();
+void Game::update() 
+{
+    m_user_input = str_to_lower(ui->userGuess->text().toStdString());
 
     ui->userGuess->clear();
 
@@ -84,15 +89,18 @@ void Game::update() {
         m_state_of_game = game::GAME_WON;
 }
 
-string Game::get_secret() {
+string Game::get_secret() 
+{
     return m_secret_word;
 }
 
-game::game_state Game::get_state_of_game() {
+game::game_state Game::get_state_of_game() 
+{
     return m_state_of_game;
 }
 
-void hangman_game() {
+void hangman_game() 
+{
     Game hangman;
 
     hangman.init();
@@ -104,9 +112,9 @@ void hangman_game() {
 
 void Game::on_enterButton_clicked()
 {
-    if (ui->userGuess->text() != game::invalid_input) {
+    if (ui->userGuess->text() != game::invalid_input && ui->userGuess->text() != game::cheat_input)
+    {
         update();
         render();
     }
 }
-

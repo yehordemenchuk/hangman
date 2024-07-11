@@ -4,7 +4,8 @@
 #include <QDialog>
 #include <game.h>
 
-namespace Ui {
+namespace Ui
+{
 class Dialog;
 }
 

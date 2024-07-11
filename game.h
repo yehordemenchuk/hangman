@@ -9,14 +9,17 @@
 using namespace std;
 
 QT_BEGIN_NAMESPACE
-namespace Ui {
+namespace Ui 
+{
     class Game;
 }
 QT_END_NAMESPACE
 
 QT_BEGIN_NAMESPACE
-namespace game {
-    enum game_state {
+namespace game 
+{
+    enum game_state 
+    {
         GAME_OVER,
         GAME_WON,
         PLAYING
@@ -29,6 +32,7 @@ namespace game {
     const bool modal = true;
     const char delimiter = ' ';
     const QString invalid_input = "";
+    const QString cheat_input = "abcdefghijklmnopqrstuvwxyz-";
 }
 QT_END_NAMESPACE
 
